@@ -1,20 +1,28 @@
-const mysql2 =require('mysql2');
+import mysql from 'mysql2/promise';
+import dotenv from 'dotenv';
 
-const conexion = mysql2.createConnection({
+<<<<<<< HEAD
+
+// database.js
+=======
+>>>>>>> origin/dev
+dotenv.config();
+
+const conexion = mysql.createPool({
     host: 'localhost',
     port: 3306,
     database: 'proyecto',
     user: 'root',
-    password: 'my-secret-pw'
+    password: 'my-secret-pw',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-conexion.connect(function(error){
-    if (error) {
-        throw error;
-    }else{
-        console.log('CONEXION EXITOSA');
-    }
+<<<<<<< HEAD
 
-});
 
-conexion.end();
+
+=======
+>>>>>>> origin/dev
+export default conexion;
